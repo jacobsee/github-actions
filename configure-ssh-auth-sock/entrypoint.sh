@@ -3,10 +3,11 @@
 DOMAIN=$1
 PRIVATE_KEY=$2
 SSH_AUTH_SOCK=$3
+SSH_PORT=$4
 
 mkdir -p $HOME/.ssh
 echo "Building known_hosts file"
-ssh-keyscan $DOMAIN >> $HOME/.ssh/known_hosts
+ssh-keyscan -p $SSH_PORT $DOMAIN >> $HOME/.ssh/known_hosts
 echo "Built known_hosts file"
 echo "Starting ssh-agent"
 eval `ssh-agent -a $SSH_AUTH_SOCK`
