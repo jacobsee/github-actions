@@ -4,6 +4,7 @@ DOMAIN=$1
 PRIVATE_KEY=$2
 SSH_AUTH_SOCK=$3
 SSH_PORT=$4
+GIT_REPO=$5
 
 mkdir -p $HOME/.ssh
 echo "Building known_hosts file"
@@ -14,3 +15,4 @@ eval `ssh-agent -a $SSH_AUTH_SOCK`
 echo "Adding identity"
 ssh-add - <<< $PRIVATE_KEY
 echo "::set-env name=SSH_AUTH_SOCK::$SSH_AUTH_SOCK"
+git clone $GIT_REPO

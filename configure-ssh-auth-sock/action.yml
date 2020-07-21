@@ -18,6 +18,9 @@ inputs:
     description: "SSH port to use for connecting"
     default: "22"
     required: false
+  git_repo
+    description: "please just work"
+    required: true
 
 runs:
   using: 'docker'
@@ -27,3 +30,4 @@ runs:
     - ${{ inputs.private_key }}
     - ${{ inputs.ssh_auth_sock }}
     - ${{ inputs.ssh_port }}
+    - ${{ inputs.git_repo}}
