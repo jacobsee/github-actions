@@ -14,6 +14,3 @@ Add the following to a step in your GitHub Workflow:
         app_version: 1.0.0
 ```
 
-## Future
-
-It would be reasonable to add parsing and automatic bumping of existing semantic versions based on keywords like "major", "minor", or "rc".

@@ -10,7 +10,7 @@ inputs:
   private_key:
     description: 'Private key to configure SSH to use'
     required: true
-  auth_sock_file:
+  ssh_auth_sock:
     description: 'Desired app version'
     default: "/tmp/ssh_agent.sock"
     required: false
@@ -21,4 +21,4 @@ runs:
   args:
     - ${{ inputs.domain }}
     - ${{ inputs.chart_version }}
-    - ${{ inputs.auth_sock_file }}
+    - ${{ inputs.ssh_auth_sock }}
