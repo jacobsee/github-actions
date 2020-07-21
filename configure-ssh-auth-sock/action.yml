@@ -20,5 +20,5 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.domain }}
-    - ${{ inputs.chart_version }}
+    - ${{ inputs.private_key }}
     - ${{ inputs.ssh_auth_sock }}
