@@ -18,7 +18,7 @@ inputs:
     description: "SSH port to use for connecting"
     default: "22"
     required: false
-  git_repo
+  git_repo:
     description: "please just work"
     required: true
 
