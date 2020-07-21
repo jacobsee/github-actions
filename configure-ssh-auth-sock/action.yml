@@ -1,0 +1,24 @@
+name: 'configure-ssh-auth-sock'
+description: 'Configures an ssh-agent on a given SSH_AUTH_SOCK to use a private key to connect to a given domain'
+author: 'Red Hat CoP'
+icon: package
+color: purple
+inputs:
+  domain:
+    description: 'Domain to configure SSH to connect to'
+    required: true
+  private_key:
+    description: 'Private key to configure SSH to use'
+    required: true
+  auth_sock_file:
+    description: 'Desired app version'
+    default: "/tmp/ssh_agent.sock"
+    required: false
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.domain }}
+    - ${{ inputs.chart_version }}
+    - ${{ inputs.auth_sock_file }}
